@@ -1,0 +1,82 @@
+.main1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 10vh 0;
+}
+
+form {
+    background-color: #666;
+    color: whitesmoke;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 150%;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: whitesmoke;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+    width: fit-content;
+    background-color: #999;
+    color: whitesmoke;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #222;
+}
+
+.btn-primary:focus, .btn-primary:active {
+    box-shadow: none;
+}
+
+.form-control {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-control::placeholder {
+    color: #777;
+}
+
+.form-control:focus {
+    background-color: #ddd;
+    box-shadow: none;
+}
+
+.label-bg {
+    background-color: #ccc;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+textarea.form-control {
+    height: 100px;
+    resize: none;
+}
+
+input[type="date"].form-control {
+    max-width: 200px;
+}
