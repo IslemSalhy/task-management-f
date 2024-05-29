@@ -16,6 +16,7 @@ export class HeaderComponent {
       if(isLoggedIn){
         this.navList.push({ item : "Profile", url : "/profile"});
         this.navList.push({ item : "Create Project", url : "/firtsStep"});
+        this.navList.push({ item : "List Project", url : "/project"});
         this.auth.isAdmin().subscribe(isAdmin => {
           if(isAdmin){
             this.navList.push(

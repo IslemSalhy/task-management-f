@@ -52,7 +52,6 @@ export class ProfileComponent implements OnInit {
               this.user=userData;
               this.img=userData["imageUrl"];
               this.populateForms(userData);
-              console.log(this.img)
             },
             (error) => {
               console.error("Error fetching user by ID:", error);
@@ -62,11 +61,9 @@ export class ProfileComponent implements OnInit {
         } else {
           this.userService.getUserByEmail(this.authService.getUserEmail()).subscribe(
             (userData) => {
-              console.log(typeof(userData));
               this.user=userData;
               this.img=userData["imageUrl"];
               this.populateForms(userData);
-              console.log(this.img)
             },
             (error) => {
               console.error("Error fetching user by email:", error);
@@ -87,7 +84,7 @@ export class ProfileComponent implements OnInit {
       'email': userData['email']
     });
     this.myForm.setValue(this.userForm.value);
-    this.projects = userData['project'];
+    this.projects = userData['tasks'];
   }
 
   dataChanged(){
@@ -104,12 +101,10 @@ export class ProfileComponent implements OnInit {
 }
 
   onSubmit(): void {
-    console.log(this.myForm.value);
+
     this.user.firstName=this.myForm.value.first_name;
     this.user.lastName=this.myForm.value.last_name;
     this.user.email=this.myForm.value.email;
-    console.log(this.user);
-    console.log(this.NewUser)
     this.NewUser= new User1();
     this.NewUser.id = this.user.id;
     this.NewUser.firstName = this.user.firstName;
@@ -122,7 +117,6 @@ export class ProfileComponent implements OnInit {
     this.NewUser.userCode = this.user.userCode;
     this.NewUser.project = this.user.project;
     
-    console.log(this.NewUser);
     this.userService.updateUser(this.NewUser).subscribe((data)=>{
       alert("Profile updated successfully!");
       console.log(data);

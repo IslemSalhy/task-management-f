@@ -35,7 +35,7 @@ export class UserComponent implements OnInit {
   }
   public onAddUser(addForm: NgForm): void {
     document.getElementById('add-user-form').click();
-    this.userService.addUser(addForm.value).subscribe(
+    this.userService.addUser({...addForm.value,role:'user'}).subscribe(
       (response: User) => {
         console.log(response);
         this.getUsers();

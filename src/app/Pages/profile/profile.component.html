@@ -33,12 +33,12 @@
                                 </tr>
                                 <tr class="tr3"></tr>
                                 <tr class="tr2">
-                                    <td class="td1">Projects</td>
+                                    <td class="td1">Name Taskes</td>
                                     <td>Description</td>
                                     <td>task</td>
                                 </tr>
-                                <tr *ngFor="let project of projects" class="tr1" (click)="RedirectToProject(project.id)" style="cursor:pointer;">
-                                    <td class="td1">{{project.name}}</td>
+                                <tr *ngFor="let project of projects" class="tr1"  style="cursor:pointer;">
+                                    <td class="td1">{{project.title}}</td>
                                     <td>{{project.description}}</td>
                                     <td>100%</td>
                                 </tr>
@@ -77,12 +77,12 @@
                                 </tr>
                                 <tr class="tr3"></tr>
                                 <tr class="tr2">
-                                    <td class="td1">Projects</td>
+                                    <td class="td1">Name Taskes</td>
                                     <td>Description</td>
                                     <td>task</td>
                                 </tr>
-                                <tr *ngFor="let project of projects" class="tr1" (click)="RedirectToProject(project.id)" style="cursor:pointer;">
-                                    <td class="td1">{{project.name}}</td>
+                                <tr *ngFor="let project of projects" class="tr1"  style="cursor:pointer;">
+                                    <td class="td1">{{project.title}}</td>
                                     <td>{{project.description}}</td>
                                     <td>100%</td>
                                 </tr>

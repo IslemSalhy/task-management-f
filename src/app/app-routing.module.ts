@@ -10,7 +10,8 @@ import { LogoutComponent } from './Pages/logout/logout.component';
 import { CreateProjectFirstStepComponent } from './Pages/create-project-first-step/create-project-first-step.component';
 import { ChoseYourProjectTeamComponent } from './Pages/chose-your-project-team/chose-your-project-team.component';
 import { CreateYourProjectComponent } from './Pages/create-your-project/create-your-project.component';
-
+import {ListProjectComponent} from './Pages/list-project/list-project.component'
+import {UpdateProjectComponent} from './Pages/update-project/update-project.component'
 const routes: Routes = [
   {path: "register", component:RegisterComponent},
   {path: "login", component:LoginComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: "project/:id" , component:ProjectComponent,},
   {path: "chose-your-project-team",component:ChoseYourProjectTeamComponent},
   {path: "create-your-project",component:CreateYourProjectComponent},
-  
+  {path: "project",component:ListProjectComponent},
+  {path:"project-update/:id" ,component:UpdateProjectComponent },
   {path: "", component:HomePageComponent},
 ]
 

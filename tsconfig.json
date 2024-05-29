@@ -24,6 +24,9 @@
       "dom"
     ]
   },
+  "include": [
+    "node_modules/sweetalert2/**/*.ts" // Add this line if not already present
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

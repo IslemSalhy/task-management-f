@@ -1,0 +1,82 @@
+<div>
+
+    
+  <div class="list">
+      <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+            <th scope="col">Tasks</th> 
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="
+                let pd of collection "
+            >
+              <th scope="row">
+                <div class="media align-items-center">
+            
+                  <div class="media-body">
+                    <span class="mb-0 text-sm"
+                      >{{ pd.name }} </span
+                    >
+                  </div>
+                </div>
+              </th>
+  
+              <td>
+                {{ pd.description }}
+              </td>
+           <td>
+
+            <ul>
+                <li  *ngFor="
+                let task of pd.tasksList"> {{task.title}} 
+                {{task.description}}</li>
+            </ul>
+           </td>
+              <td>
+           
+                <button
+                  (click)="update(pd.id)"
+                  class="btn btn-warning "
+                  style="margin-left: 10px; margin-right: 10px;"
+                >
+                <i class="fas fa-edit"></i> 
+                </button>
+                <button
+                  (click)="delete(pd.id)"
+                  class="btn btn-danger"
+                  style="margin-left: 10px; "
+                >
+                <i class="fas fa-trash"></i> 
+                </button>
+                <button
+                (click)="details(pd.id)"
+                class="btn btn-success"
+                style="margin-left: 10px; "
+              >
+              <i class="fa-solid fa-circle-info"></i>
+              </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     <!-- <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      [responsive]="true"
+      (pageChange)="handlePageChange($event)"
+    ></pagination-controls>
+    Items per Page:
+    <select (change)="handlePageSizeChange($event.target.value)">
+        <option *ngFor="let size of pageSizes" [value]="size">{{ size }}</option>
+      </select>
+  -->
+    </div>
+    </div>
+  

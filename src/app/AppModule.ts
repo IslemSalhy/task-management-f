@@ -18,8 +18,9 @@ import { CommonModule } from '@angular/common';
 import { LogoutComponent } from './Pages/logout/logout.component';
 import { ChoseYourProjectTeamComponent } from './Pages/chose-your-project-team/chose-your-project-team.component';
 import { CreateYourProjectComponent } from './Pages/create-your-project/create-your-project.component';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import {ListProjectComponent} from './Pages/list-project/list-project.component'
+import {UpdateProjectComponent} from './Pages/update-project/update-project.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { CreateYourProjectComponent } from './Pages/create-your-project/create-y
     FooterComponent,
     LogoutComponent,
     ChoseYourProjectTeamComponent,
-    CreateYourProjectComponent
+    CreateYourProjectComponent,
+    ListProjectComponent,
+    UpdateProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,8 @@ import { CreateYourProjectComponent } from './Pages/create-your-project/create-y
     FormsModule,
     RouterModule,
     CommonModule,
+    NgxPaginationModule,
+
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

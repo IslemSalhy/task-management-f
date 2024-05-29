@@ -1,71 +1,77 @@
 <main class="main1 container">
   <div class="row">
-      <form action="">
+    <form (ngSubmit)="onSubmitResult()" [formGroup]="myForm" novalidate>
           <div class="row justify-content-center align-items-center">
               <p style="text-align: center;">Create Your Project Now !!</p>
           </div>
           <div class="form-group row">
               <label for="name" class="col-2 col-form-label">Project Name</label>
               <div class="col-9">
-                  <input type="text" class="form-control" name="name" id="name" placeholder="demo">
+                  <input type="text" class="form-control"  formControlName ="name" id="name" placeholder="demo">
               </div>
           </div>
           <div class="form-group row">
               <label for="Description" class="col-2 col-form-label">Description</label>
               <div class="col-9">
-                  <textarea class="form-control" name="Description" id="Description"> </textarea>
+                  <textarea class="form-control" formControlName="description" id="Description"> </textarea>
               </div>
           </div>
           <div class="form-group row">
               <label for="EndDate" class="col-2 col-form-label">End Date</label>
               <div class="col-9">
-                  <input type="date" class="form-control date" name="EndDate" id="EndDate" value="2200-11-03">
+                  <input type="date" class="form-control date" formControlName="endDate" id="EndDate" value="2200-11-03">
               </div>
           </div>
-          <div class="row justify-content-center align-items-center">
-              <button type="submit" class="btn btn-primary">Create</button>
-          </div>
-      </form>
+        
+   
+
+<div class="col-12">
+  <h2>Add Task</h2>
+  <form (ngSubmit)="addTask()" class="form-inline">
+      <div class="form-group">
+          <label for="taskName">Task Name:</label>
+          <input type="text" class="form-control" id="taskName" [(ngModel)]="taskName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for="taskName">Task Description:</label>
+        <input type="text" class="form-control" id="taskdescription" [(ngModel)]="taskDescription" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      
+          <label for="email" >Add a Team Member with his Email</label>
+          <select  class="form-control"  placeholder="Email" [(ngModel)]="selectedemail" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let user of userList" [value]="user.id">
+             {{user.email}} ({{user.firstName}})
+            </option> 
+            </select>
+   
+ 
   </div>
-</main>
+      <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+</div>
+<div class="col-12">
+  <h2>Task List</h2>
+  <ul class="list-group" *ngFor="let task of tasks">
+      <li class="list-group-item">{{ task.title }} : {{task.description}}</li>
+  </ul>
+</div>
 <main class="container main2">
   <div class="row justify-content-center align-items-center">
     
-      <form (ngSubmit)="onSubmit()" class="row f2" [formGroup]="myForm">
-          <div class="form-group row align-items-center">
-              <div class="col-3">
-                  <label for="email" class=" col-form-label addTeamMember">Add a Team Member with his Email</label>
-              </div>
-              <div class="col-8">
-                  <input formControlName="email" type="email" class="form-control" name="email" id="email" placeholder="Email">
-              </div>
-              <div class="col-sm-1">
-                  <button type="submit" class="btn btn-primary b1">Add</button>
-              </div>
-          </div>
-      </form>
+     
+       
+ 
       <div class="table-responsive">
           <div class="label">
               Our Team Members
           </div>
       <table class="table table-striped table col-12">
         <tbody>
-          <tr class="col-12">
-            <td class="col-10 email111">
-              islem@gmail.com
-            </td>
-            <td class="col-2">
-              <button class="btn btn-primary delete">Delete</button>
-            </td>
+          <tr class="list-group" *ngFor="let team of myTeam">
+            <li class="list-group-item">{{ team.email ? team.email : "" }} : {{team.firstName? team.firstName : ""}}</li>
           </tr>
-          <tr class="col-12">
-            <td class="col-10 email111">
-              islem@gmail.com
-            </td>
-            <td class="col-2">
-              <button class="btn btn-primary delete">Delete</button>
-            </td>
-          </tr>
+    
         </tbody>
       </table>
       <div class="finishDiv row justify-content-center align-items-center">
@@ -74,5 +80,8 @@
     </div>
 
   </div>
+</main>
+</form>
+</div>
 </main>
 
